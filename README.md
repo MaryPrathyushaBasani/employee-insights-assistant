@@ -7,7 +7,7 @@ A Flask chat application for asking workforce questions in plain English. It sup
 1. Create and activate a Python virtual environment.
 2. Install the dependencies with `python -m pip install -r requirements.txt`.
 3. Create a local `.env` file with the configuration keys below.
-4. Start the app with `python app.py` and open `http://127.0.0.1:5000`.
+4. Start the app with `python app.py` and open `http://127.0.0.1:5001/`.
 
 ```dotenv
 MYSQL_HOST=127.0.0.1
