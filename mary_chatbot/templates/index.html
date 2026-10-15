@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f7f4">
   <title>Employee Insights Assistant</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
 </head>
 <body>
@@ -41,7 +38,35 @@
           <span>Employee Insights Assistant</span>
         </div>
         <span class="topbar-spacer" aria-hidden="true"></span>
+        <button class="report-settings-trigger" id="report-settings-trigger" type="button" aria-haspopup="dialog" aria-controls="report-settings-dialog" title="Report settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v2M12 18.5v2M3.5 12h2M18.5 12h2M6 6l1.4 1.4m9.2 9.2L18 18m0-12-1.4 1.4m-9.2 9.2L6 18"></path><circle cx="12" cy="12" r="4"></circle></svg>
+          <span>Report Settings</span>
+        </button>
       </header>
+
+      <dialog class="report-settings-dialog" id="report-settings-dialog" aria-labelledby="report-settings-title">
+        <form method="dialog" class="report-settings-form">
+          <div class="report-settings-heading">
+            <h2 id="report-settings-title">Report Settings</h2>
+            <button class="sidebar-icon-button report-settings-close" type="submit" aria-label="Close report settings" title="Close">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+            </button>
+          </div>
+          <label class="report-email-control" for="report-email">
+            <span>Email address</span>
+            <input id="report-email" type="email" maxlength="254" autocomplete="email" placeholder="name@example.com">
+          </label>
+          <label class="auto-email-control" for="auto-email">
+            <input id="auto-email" type="checkbox">
+            <span>Automatically email reports</span>
+          </label>
+          <button class="report-settings-send" id="report-settings-send" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>
+            <span>Send Report</span>
+          </button>
+          <p class="report-settings-status" id="report-settings-status" role="status" aria-live="polite">Create a report before sending it.</p>
+        </form>
+      </dialog>
 
       <section class="chat-transcript" id="conversation" aria-label="Conversation" aria-live="polite">
         <div class="chat-empty" id="empty-state">
@@ -66,9 +91,10 @@
               </button>
             </div>
           </form>
-          <div class="composer-status-row">
-            <p class="voice-status" id="voice-status" role="status" aria-live="polite"></p>
-            <p class="copyright-footer">© 2026 Mary Prathyusha Basani. All rights reserved.</p>
+          <p class="voice-status" id="voice-status" role="status" aria-live="polite"></p>
+          <div class="app-attribution">
+            <span>© 2026. All rights reserved.</span>
+            <span>Created by Mary Prathyusha Basani</span>
           </div>
         </div>
       </footer>

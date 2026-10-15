@@ -8,3 +8,8 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 instance/
+
+# Generated report files
+**/report*.pdf
+**/*-report*.pdf
+**/reports/
