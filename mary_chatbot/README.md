@@ -8,7 +8,7 @@ A Flask chat application for workforce questions, grounded business analysis, re
 2. Create and activate a Python virtual environment (`python -m venv .venv`).
 3. Install dependencies with `python -m pip install -r requirements.txt`.
 4. Copy `.env.example` to `.env` and add your local service credentials.
-5. Start the app with `python app.py` and open `http://127.0.0.1:5001/`.
+5. Start the app with `python app.py` and open `http://127.0.0.1:5000/` (the default; set `PORT` to use another port).
 
 On Windows, activate the environment with `.venv\Scripts\activate`. On macOS or Linux, use `source .venv/bin/activate`.
 
